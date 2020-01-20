@@ -1,0 +1,32 @@
+a="I am a human being"
+b="I am good"
+c="Good graders study well"
+d="Humans love graders"
+e="Every human does not study well"
+# In this case neg_e is the negation of e
+count=0
+result=0
+all_truths=[[0,0],[0,1],[1,0],[1,1]]
+for value in all_truths:
+    if value[0]==1:
+        c="T"
+    else:
+        c="F"
+    if value[1]==1:
+        e="T"
+    else:
+        e="F"
+    if e=="T":
+        neg_e="F"
+    else:
+        neg_e="T"
+    for i in (c and e):
+        if i=="T":
+            count+=1
+
+if count==len(all_truths):
+    result="Yes"
+else:
+    result="No"
+print("Is every human a good grader?",result)
+    
